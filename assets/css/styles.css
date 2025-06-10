@@ -1,0 +1,62 @@
+:root {
+    /*colors*/
+    --rose-800:#7A284E;
+    --rose-50:#FFF7FB;
+    --stone-900:#312E2C;
+    --stone-600:#5F564D;
+    --stone-150:#E3DDD7;
+    --stone-100:#F3E5D7;
+    --brown-800:#854632;
+    --white:#fff;
+    /*fonts*/
+    --font-young-serif: "YoungSerif", serif;
+    --font-outfit: "Outfit", sans-serif;
+    --font-title-d: 4rem/1 var(--font-young-serif);
+    --font-title-m: 3.6rem/1 var(--font-young-serif);
+    --font-subtitle: 2.8rem/1 var(--font-young-serif);
+    --font-notes: 2rem/1 var(--font-outfit);
+    --font-body: 1.6rem/1.5 var(--font-outfit);
+    --font-body-bold: 700 1.6rem/1.5 var(--font-outfit);
+    /*spacing*/
+    --space-100: .8rem;
+    --space-150: calc(var(--space-100)*1.5);
+    --space-200: calc(var(--space-100)*2);
+    --space-300: calc(var(--space-100)*3);
+    --space-400: calc(var(--space-100)*4);
+    --space-500: calc(var(--space-100)*5);
+    --space-600: calc(var(--space-100)*6);
+    --space-1600: calc(var(--space-100)*16);
+}
+
+@font-face {
+    font-family: "Outfit";
+    src: url("../fonts/Outfit-VariableFont.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: "YoungSerif";
+    src: url("../fonts/YoungSerif-Regular.ttf") format("ttf");
+}
+
+
+*, *::before, *::after {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+html {
+    font-size: 62.5%;
+    font: var(--font-body);
+}
+
+
+
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
