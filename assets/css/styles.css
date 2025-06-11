@@ -1,62 +1,191 @@
 :root {
-    /*colors*/
-    --rose-800:#7A284E;
-    --rose-50:#FFF7FB;
-    --stone-900:#312E2C;
-    --stone-600:#5F564D;
-    --stone-150:#E3DDD7;
-    --stone-100:#F3E5D7;
-    --brown-800:#854632;
-    --white:#fff;
-    /*fonts*/
-    --font-young-serif: "YoungSerif", serif;
-    --font-outfit: "Outfit", sans-serif;
-    --font-title-d: 4rem/1 var(--font-young-serif);
-    --font-title-m: 3.6rem/1 var(--font-young-serif);
-    --font-subtitle: 2.8rem/1 var(--font-young-serif);
-    --font-notes: 2rem/1 var(--font-outfit);
-    --font-body: 1.6rem/1.5 var(--font-outfit);
-    --font-body-bold: 700 1.6rem/1.5 var(--font-outfit);
-    /*spacing*/
-    --space-100: .8rem;
-    --space-150: calc(var(--space-100)*1.5);
-    --space-200: calc(var(--space-100)*2);
-    --space-300: calc(var(--space-100)*3);
-    --space-400: calc(var(--space-100)*4);
-    --space-500: calc(var(--space-100)*5);
-    --space-600: calc(var(--space-100)*6);
-    --space-1600: calc(var(--space-100)*16);
+  /*colors*/
+  --rose-800: #7a284e;
+  --rose-50: #fff7fb;
+  --stone-900: #312e2c;
+  --stone-600: #5f564d;
+  --stone-150: #e3ddd7;
+  --stone-100: #f3e5d7;
+  --brown-800: #854632;
+  --white: #fff;
+  /*fonts*/
+  --font-young-serif: "YoungSerif", serif;
+  --font-outfit: "Outfit", sans-serif;
+  --font-size-title-d: 4rem;
+  --font-size-title-m: 3.6rem;
+  --font-size-subtitle: 2.8rem;
+  --font-size-notes: 2rem;
+  --font-size-body: 1.6rem;
+  /*spacing*/
+  --space-100: 0.8rem;
+  --space-150: calc(var(--space-100) * 1.5);
+  --space-200: calc(var(--space-100) * 2);
+  --space-300: calc(var(--space-100) * 3);
+  --space-400: calc(var(--space-100) * 4);
+  --space-500: calc(var(--space-100) * 5);
+  --space-600: calc(var(--space-100) * 6);
+  --space-1600: calc(var(--space-100) * 16);
 }
 
 @font-face {
-    font-family: "Outfit";
-    src: url("../fonts/Outfit-VariableFont.ttf") format("ttf");
+  font-family: "Outfit";
+  src: url("../fonts/Outfit-VariableFont.ttf") format("ttf");
 }
 
 @font-face {
-    font-family: "YoungSerif";
-    src: url("../fonts/YoungSerif-Regular.ttf") format("ttf");
+  font-family: "YoungSerif";
+  src: url("../fonts/YoungSerif-Regular.ttf") format("ttf");
 }
-
-
-*, *::before, *::after {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
 
 html {
-    font-size: 62.5%;
-    font: var(--font-body);
+  font-size: 62.5%;
 }
 
+body {
+  font-family: var(--font-outfit);
+  font-size: var(--font-size-body);
+  color: var(--stone-600);
+}
 
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+main {
+  display: flex;
+  flex-flow: column;
+  background-color: var(--stone-100);
+}
 
+.post {
+  display: flex;
+  flex-flow: column nowrap;
+  /* gap: var(--space-500); */
+  /* max-width: 73.6rem; */
+  width: 100%;
+  background-color: var(--white);
+  /* border-radius: var(--space-300); */
+}
 
+.recipe-image {
+  max-width: 100%;
+  height: fit-content;
+  overflow: hidden;
 
+  img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+  }
+}
 
+.recipe-content {
+  display: flex;
+  flex-flow: column;
+  gap: var(--space-400);
+  padding: var(--space-500) var(--space-400);
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+  & section {
+    display: flex;
+    flex-flow: column;
+    gap: var(--space-300);
+  }
+
+  .preparation {
+    gap: var(--space-200);
+    padding: var(--space-300);
+    background-color: var(--rose-50);
+    border-radius: 1.2rem;
+  }
+}
+
+h2:not(.preparation-title) {
+    font-family: var(--font-young-serif);
+    font-size: var(--font-size-subtitle);
+    line-height: 1;
+    color: var(--brown-800);
+}
+
+.preparation-title {
+    font-family: var(--font-outfit);
+    font-size: var(--font-size-notes);
+    font-weight: 600;
+    line-height: 1;
+    color: var(--rose-800);
+}
+
+.ul-list, .ol-list {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.ul-list {
+  .list-item {
+    list-style-type: none;
+
+    strong {
+        font-family: var(--font-outfit);
+        font-size: var(--font-size-body);
+        font-weight: bold;
+    }
+
+    &::before {
+      content: "\2022";
+      padding-inline-end: var(--space-100);
+    }
+  }
+}
+
+.ol-list {
+    padding-inline-start: var(--space-200);
+
+    .list-item {
+        padding-inline-start: var(--space-100);
+
+        strong {
+        font-family: var(--font-outfit);
+        font-size: var(--font-size-body);
+        font-weight: bold;
+    }
+    }    
+}
+
+.ol-list .list-item::before {
+        content: "";
+        counter-reset: section;
+    }
+
+.recipe-title {
+  font-family: var(--font-young-serif);
+  font-size: var(--font-size-title-m);
+  line-height: 1.5;
+}
+
+.recipe-description {
+  font-family: var(--font-outfit);
+  line-height: 1.5;
+}
+
+.hr {
+  display: block;
+  width: 100%;
+  height: 0.1rem;
+  background-color: var(--stone-150);
+  margin: auto;
+}
+
+.attribution {
+  text-align: center;
+  font-size: var(--font-body);
+  background-color: var(--white);
+  padding: var(--space-100);
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
