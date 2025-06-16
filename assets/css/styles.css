@@ -38,10 +38,10 @@
 
 .sr-only {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: .1rem;
+  height: .1rem;
   padding: 0;
-  margin: -1px;
+  margin: -.1rem;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
@@ -202,7 +202,7 @@ h2:not(.preparation-title) {
     padding-bottom: calc(var(--space-100) * 1.5);
 
     &:not(:last-child) {
-      border-bottom: 1px solid var(--stone-150);
+      border-bottom: .1rem solid var(--stone-150);
     }
 
     td {
@@ -230,7 +230,7 @@ h2:not(.preparation-title) {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 76.8rem) {
   main {
     padding: var(--space-1600) var(--space-600);
   }
