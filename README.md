@@ -30,10 +30,11 @@ This is a solution to the [Recipe page challenge on Frontend Mentor](https://www
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
+- Mobile first CSS
 
 ### What I learned
 
-xxxxxxxxxxx
+I struggled little bit with spacing in and out the lists and list items.
 
 ## Author
 

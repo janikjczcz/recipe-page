@@ -18,7 +18,6 @@
   --font-size-body: 1.6rem;
   /*spacing*/
   --space-100: 0.8rem;
-  --space-150: calc(var(--space-100) * 1.5);
   --space-200: calc(var(--space-100) * 2);
   --space-300: calc(var(--space-100) * 3);
   --space-400: calc(var(--space-100) * 4);
@@ -37,13 +36,14 @@
   src: url("../fonts/YoungSerif-Regular.ttf") format("ttf");
 }
 
-.sr-only {position: absolute;
+.sr-only {
+  position: absolute;
   width: 1px;
   height: 1px;
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   border: 0;
 }
 
@@ -112,80 +112,68 @@ main {
 }
 
 h2:not(.preparation-title) {
-    font-family: var(--font-young-serif);
-    font-size: var(--font-size-subtitle);
-    line-height: 1;
-    color: var(--brown-800);
+  font-family: var(--font-young-serif);
+  font-size: var(--font-size-subtitle);
+  line-height: 1;
+  color: var(--brown-800);
 }
 
 .preparation-title {
-    font-family: var(--font-outfit);
-    font-size: var(--font-size-notes);
-    font-weight: 600;
-    line-height: 1;
-    color: var(--rose-800);
+  font-family: var(--font-outfit);
+  font-size: var(--font-size-notes);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--rose-800);
 }
 
-.ul-list, .ol-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-100);
+.ul-list,
+.ol-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+  padding-inline-start: calc(var(--space-100) * 2.5);
+
+  .list-item {
+    padding-inline-start: var(--space-200);
+  }
+
+  ::marker {
+    color: var(--brown-800);
+    font-weight: bold;
+  }
 }
 
 .ul-list {
   .list-item {
-    list-style-type: none;
-    /* padding-inline-start: var(--space-100); */
-
     strong {
-        font-family: var(--font-outfit);
-        font-size: var(--font-size-body);
-        font-weight: bold;
-    }
-
-    &::before {
-      content: "\2022";
-      padding-inline-end: var(--space-100);
+      font-family: var(--font-outfit);
+      font-size: var(--font-size-body);
       font-weight: bold;
-      color: var(--brown-800);
     }
   }
 }
 
 .ol-list {
-    padding-inline-start: var(--space-200);
-
-    .list-item {
-        /* padding-inline-start: var(--space-100); */
-
-
-        &::marker {
-            color: var(--brown-800);
-            font-weight: bold;
-            
-        }
-
-        strong {
-        font-weight: bold;
-    }
-    }    
+  strong {
+    font-weight: bold;
+  }
 }
 
 .list-item span {
-    font-family: var(--font-outfit);
-    font-size: var(--font-size-body);
-    line-height: 1.5;
+  font-family: var(--font-outfit);
+  font-size: var(--font-size-body);
+  line-height: 1.5;
 }
-
 
 .recipe-title {
   font-family: var(--font-young-serif);
   font-size: var(--font-size-title-m);
-  line-height: 1.5;
+  line-height: 1;
+  letter-spacing: 0;
   color: var(--stone-900);
 }
 
-.recipe-description {
+.recipe-subtitle {
   font-family: var(--font-outfit);
   line-height: 1.5;
 }
@@ -199,34 +187,34 @@ h2:not(.preparation-title) {
 }
 
 .nutrition-table {
-    tbody {
-        display: flex;
+  tbody {
+    display: flex;
     flex-flow: column nowrap;
     align-items: stretch;
     gap: calc(var(--space-100) * 1.5);
-    }
+  }
 
-    tr {
+  tr {
     display: flex;
     flex-flow: row nowrap;
     gap: var(--space-200);
     padding-inline: var(--space-400);
-    padding-bottom:calc(var(--space-100) * 1.5);
+    padding-bottom: calc(var(--space-100) * 1.5);
 
     &:not(:last-child) {
-        border-bottom: 1px solid var(--stone-150);
+      border-bottom: 1px solid var(--stone-150);
     }
 
     td {
-        max-width: 50%;
-        width: 100%;
+      max-width: 50%;
+      width: 100%;
     }
 
     .amount {
-        color: var(--brown-800);
-        font-weight: bold;
+      color: var(--brown-800);
+      font-weight: bold;
     }
-}
+  }
 }
 
 .attribution {
@@ -243,29 +231,27 @@ h2:not(.preparation-title) {
 }
 
 @media only screen and (min-width: 768px) {
-    main {
-        padding: var(--space-1600) var(--space-600);
-    }
+  main {
+    padding: var(--space-1600) var(--space-600);
+  }
 
-    .post {
-        margin: auto;
-        gap: var(--space-500);
-        padding: var(--space-500);
-        max-width: 73.6rem;
-        border-radius: var(--space-300);
-    }
+  .post {
+    margin: auto;
+    gap: var(--space-500);
+    padding: var(--space-500);
+    max-width: 73.6rem;
+    border-radius: var(--space-300);
+  }
 
-    .recipe-image {
-        border-radius: 1.2rem;
-    }
+  .recipe-image {
+    border-radius: 1.2rem;
+  }
 
-    .recipe-content {
-        padding: 0;
-    }
+  .recipe-content {
+    padding: 0;
+  }
 
-    .recipe-title {
-        font-size: var(--font-size-title-d);
-    }
-
-    
+  .recipe-title {
+    font-size: var(--font-size-title-d);
+  }
 }
