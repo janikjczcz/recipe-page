@@ -199,10 +199,10 @@ h2:not(.preparation-title) {
     flex-flow: row nowrap;
     gap: var(--space-200);
     padding-inline: var(--space-400);
-    padding-bottom: calc(var(--space-100) * 1.5);
+    padding-block-end: calc(var(--space-100) * 1.5);
 
     &:not(:last-child) {
-      border-bottom: .1rem solid var(--stone-150);
+      border-block-end: .1rem solid var(--stone-150);
     }
 
     td {
